@@ -1,7 +1,7 @@
 import request from './common/request';
 
-const BASE_URL = 'https://www.jessi.club:8000/ques';
-
+// const BASE_URL = 'https://www.jessi.club:8000/ques';
+const BASE_URL = 'http://localhost:4000/api/v1/ques';
 // 获取随机题目
 export function getRandomQuestions () {
     return request(`${BASE_URL}/getRandom`, {
@@ -11,7 +11,7 @@ export function getRandomQuestions () {
 // 获取错题重练的题目
 export function getWrongQuestions (data) {
     return request(`${BASE_URL}/getWrong`,{
-        method: 'POST',
+        method: 'GET',
         data
     })
 }
@@ -34,7 +34,7 @@ export function getSimulation () {
 //获取收藏的题目
 export function getCollected(data) {
     return request(`${BASE_URL}/getCollected`, {
-        method: 'POST',
+        method: 'GET',
         data
     })
 }
@@ -46,11 +46,11 @@ export function getChapterNames(params) {
         params
     })
 }
-
+ 
 // 获取某题目内容
 export function getOneQuestion (data) {
     return request(`${BASE_URL}/getOneQuestion`, {
-        method: 'POST', 
+        method: 'GET', 
         data
     })
 }

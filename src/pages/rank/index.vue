@@ -72,6 +72,7 @@ export default {
             })
             .then(res => {
                 uni.hideLoading();
+                console.log(res)
                 if (res.code === 0) {
                     const data = res.data;
                     this.maxQuesRankList = data.rankNum;

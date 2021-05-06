@@ -31,6 +31,7 @@ export default {
         note: this.text
       })
       .then(res => {
+        console.log(res)
         if (res.code === 0) {
           uni.showToast({
             title: '笔记保存成功',
@@ -50,6 +51,7 @@ export default {
         }
       })
       .catch(err => {
+        console.log(err)
          uni.showToast({
             title: err.errMsg,
             icon: 'none'
@@ -57,7 +59,7 @@ export default {
       })
     },
     onLoad (query) {
-      this.id = query.id;
+      this.id = Number(query.id);
       this.text = query.text;
     }
   }

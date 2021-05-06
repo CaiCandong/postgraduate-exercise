@@ -1,11 +1,12 @@
 import request from './common/request';
 
-const BASE_URL = 'https://www.jessi.club:8000/record';
+// const BASE_URL = 'https://www.jessi.club:8000/record';
+const BASE_URL = 'http://localhost:4000/api/v1/record';
 
 // 获取各科目的用户信息
 export function getTotalProgress (data) {
     return request(`${BASE_URL}/totalProgress`, {
-        method: 'POST',
+        method: 'GET',
         data
     })
 }
@@ -13,7 +14,7 @@ export function getTotalProgress (data) {
 // 获取单独科目的章节信息
 export function getChapterProgress (data) {
     return request(`${BASE_URL}/chapterProgress`, {
-        method: 'POST',
+        method: 'GET',
         data
     })
 }
@@ -53,13 +54,15 @@ export function cancelCollection (data) {
 // 某道题是否收藏
 export function checkIsCollected (data) { 
     return request(`${BASE_URL}/isCollected`, {
-        method: 'POST',
+        method: 'GET',
         data
     })
  }
 
 // 提交模拟题的做题结果
+
 export function saveSimulationResult (data) {
+    // console.log(data)
     return request(`${BASE_URL}/saveSimulationResult`, {
         method: 'POST',
         data

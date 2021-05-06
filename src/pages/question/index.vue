@@ -64,7 +64,6 @@
                     </view>
                  </view>
             </touch-swiper>
-            
       </view>
   </view>
 </template>
@@ -139,9 +138,9 @@ export default {
                 id: query.id
             })
             .then(res => {
-
                 if (res.code === 0) {
                     this.questions = res.data;
+                    // console.log(this.questions)
                     // 获取笔记
                     this.getNote();
                     this.setOptions();
@@ -265,6 +264,7 @@ export default {
             .then(res => {
                 if (res.code === 0) {
                     this.questions = res.data;
+                    // console.log(this.questions)
                     this.setOptions();
                 }
                 this.questionReady = true;
@@ -332,7 +332,6 @@ export default {
         },
         // 确认答案
         confirmAnswer (isDone = false) {
-
             // 还未选择答案
             if (this.userAnswer.length === 0) {
                 uni.showToast({
